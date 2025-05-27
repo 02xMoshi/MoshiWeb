@@ -1,13 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Discord Bot Sales Site</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yükleme Ekranı Örneği</title>
+  <link rel="stylesheet" href="/frontend/styles/preload.css" />
 </head>
 <body>
-  <h1>Hoşgeldin dedem! :)</h1>
-  <script src="scripts/main.js"></script>
+
+  <!-- Yüklenme ekranı -->
+  <div id="preloader">
+    <div class="spinner"></div>
+    <p>Yükleniyor...</p>
+  </div>
+
+  <!-- Gerçek içerik -->
+  <div id="main-content" style="display: none;">
+    <h1>Hoş Geldin!</h1>
+    <p>Site başarıyla yüklendi.</p>
+  </div>
+
+  <script src="/frontend/scripts/preload.js"></script>
 </body>
 </html>
