@@ -1,0 +1,304 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 280px;
+  margin-top: 32px;
+  position: relative;
+  user-select: none;
+}
+nav, nav ul, nav ul li {
+  margin: 0;
+  padding: 0;
+}
+#navbar {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  background: linear-gradient(90deg, #000000, #4b0000);
+  box-shadow: 0 4px 10px rgba(70, 70, 70, 0.7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  border-radius: 16px;
+  z-index: 1000;
+  padding: 0 30px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(70, 70, 70, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ccc;
+  overflow: hidden;
+  max-width: 1200px;
+  min-width: 900px;
+  margin: 0 auto;
+}
+
+#sakura-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 60px;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+  width: 100%;
+  background: transparent;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 10;
+}
+
+nav ul img {
+  height: 50px;
+  opacity: 1;
+  margin-right: auto;
+  position: relative;
+  margin-left: -20px;
+  /* Removed drop-shadow filter to eliminate gray glow */
+  position: relative;
+  z-index: 15;
+  transition: none;
+}
+
+nav ul img:hover {
+  /* Removed hover drop-shadow filter */
+  filter: none;
+}
+
+nav ul li {
+  margin-left: 8px;
+}
+
+nav ul li a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 6px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: none;
+  background-color: transparent;
+}
+
+nav ul li a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -60%;
+  width: 60%;
+  height: 120%;
+  background: linear-gradient(120deg, rgba(255, 192, 203, 0.15), rgba(255, 182, 193, 0.4), rgba(255, 192, 203, 0.15));
+  transform: translateY(-50%) skewX(-25deg);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover::before {
+  animation: sakuraShine 1.5s forwards;
+  opacity: 1;
+}
+
+@keyframes sakuraShine {
+  0% {
+    left: -60%;
+    opacity: 0;
+  }
+  50% {
+    left: 100%;
+    opacity: 0.8;
+  }
+  100% {
+    left: 160%;
+    opacity: 0;
+  }
+}
+
+nav ul li a:hover {
+  color: #ffe4e1;
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.7);
+  transform: scale(1.12) translateY(-4px);
+  z-index: 2;
+  background-color: rgba(75, 0, 0, 0.4);
+  border: 1px solid rgba(255, 182, 193, 0.5);
+}
+
+nav ul li a:hover i {
+  color: #ffd1dc;
+  transform: scale(1.3);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+nav ul li:nth-child(1) a:hover::before {
+  animation-delay: 0s;
+}
+nav ul li:nth-child(2) a:hover::before {
+  animation-delay: 0.3s;
+}
+nav ul li:nth-child(3) a:hover::before {
+  animation-delay: 0.6s;
+}
+nav ul li:nth-child(4) a:hover::before {
+  animation-delay: 0.9s;
+}
+nav ul li:nth-child(5) a:hover::before {
+  animation-delay: 1.2s;
+}
+nav ul li:nth-child(6) a:hover::before {
+  animation-delay: 1.5s;
+}
+
+nav ul li a i {
+  margin-right: 8px;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+nav ul li a.home i {
+  content: "\\f015"; /* home icon */
+}
+
+nav ul li a.about i {
+  content: "\\f129"; /* info-circle icon */
+}
+
+nav ul li a.services i {
+  content: "\\f013"; /* cog icon */
+}
+
+nav ul li a.contact i {
+  content: "\\f0e0"; /* envelope icon */
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    color: #ccc;
+    text-shadow: 0 0 4px rgba(100, 149, 237, 0.4);
+  }
+  50% {
+    color: #e0e7ff;
+    text-shadow: 0 0 8px rgba(100, 149, 237, 0.8);
+  }
+}
+
+@keyframes iconPulse {
+  0% {
+    transform: scale(1);
+    color: #bbb;
+  }
+  100% {
+    transform: scale(1.3);
+    color: #a0b9ff;
+  }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-30px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.sakura-petal {
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+  user-select: none;
+  animation-name: fall;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(0 0 3px rgba(180, 180, 180, 0.5));
+}
+
+@media (max-width: 600px) {
+  nav {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+  }
+
+  nav ul img {
+    margin-bottom: 10px;
+    margin-right: 0px;
+  }
+
+  nav ul li {
+    margin: 10px 0 0 0;
+  }
+}
+
+#moshi-logo {
+  /* Removed background-color to avoid black background */
+  background-color: transparent;
+  display: block;
+  position: relative;
+  z-index: 20;
+  border-radius: 4px;
+  padding: 2px 4px;
+  mix-blend-mode: lighten;
+}
+
+/* ...existing code... */
+
+@keyframes spin-accelerate {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: cubic-bezier(0.55, 0.05, 0.67, 0.19); /* yavaş başla */
+  }
+  30% {
+    transform: rotate(120deg);
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1); /* hızlan */
+  }
+  70% {
+    transform: rotate(330deg);
+    animation-timing-function: cubic-bezier(0.55, 0.05, 0.67, 0.19); /* yavaşla */
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo-spin {
+  animation: spin-accelerate 1.2s;
+}
