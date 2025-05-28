@@ -1,0 +1,30 @@
+### Genel
+başlangıçta discord bot satışı yapılması için düzenlenecek sonrasında geliştirilebilir.
+
+### Yapılacaklar
+- [] proje kurulumu
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
+- []
